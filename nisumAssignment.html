@@ -1,0 +1,51 @@
+<html>
+	<head></head>
+	<title>Nisum Assignment</title>
+	<body>
+	
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+		
+		/*let header = new Headers({
+			'Access-Control-Allow-Origin':'*',
+			'Content-Type': 'multipart/form-data'
+		});
+		let sentData={
+			method:'GET',
+			mode: 'cors',
+			header: header
+		};
+return new Promise((reslove,reject)=>{
+    fetch('https://www.westelm.com/services/catalog/v4/category/shop/new/all-new/index.json', sentData)
+        .then(response=> response.json())
+        .then(responseText=>{
+            let resp = typeof responseText === 'string' ? JSON.parse(responseText) : responseText;
+            console.log(resp);
+            reslove(resp);
+        }).catch(err=>{
+        console.log(err);
+        reject(err);
+    });
+}).catch(err => {
+        console.log('error');
+    });
+	});*/
+	
+	
+			fetch('productDetails.json', {'crossDomain':true ,'Access-Control-Allow-Origin':'*', mode: 'cors'}) // Call the fetch function passing the url of the API as a parameter
+			.then(function(data) {
+				// Your code for handling the data you get from the API
+				console.log('returned Data = '+ JSON.stringify(data));			
+				receivedData(data);				
+			})
+			.catch(function() {
+				// This is where you run code if the server returns any errors
+			});
+		});
+		
+		function receivedData(data) {		
+			console.log('data = '+JSON.stringify(data));
+		}
+	</script>
+	</body>
+</html>
